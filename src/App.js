@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LetterEditor from './components/LetterEditor';
 
-const BACKEND_URL = 'https://letter-editor-buen.onrender.com'; // ✅ Updated with correct backend URL
+const BACKEND_URL = 'https://letter-editor-buen.onrender.com'; // ✅ Correct backend URL
 
 const App = () => {
   const [user, setUser] = useState(null);
