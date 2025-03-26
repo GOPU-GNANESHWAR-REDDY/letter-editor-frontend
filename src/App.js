@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LetterEditor from './components/LetterEditor';
 
-const BACKEND_URL = 'https://your-render-backend-url.com'; // ✅ Update with your actual Render URL
+const BACKEND_URL = 'https://letter-editor-buen.onrender.com'; // ✅ Updated with correct backend URL
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -70,7 +70,7 @@ const App = () => {
           </div>
         </div>
       ) : (
-        <a href={`${BACKEND_URL}/auth/google`}>
+        <a href={`${BACKEND_URL}/auth/google`}> {/* ✅ Updated Login URL */}
           <button>Login with Google</button>
         </a>
       )}

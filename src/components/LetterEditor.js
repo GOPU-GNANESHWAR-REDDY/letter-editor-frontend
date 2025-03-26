@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import axios from 'axios';
 import 'react-quill/dist/quill.snow.css';
 
-const BACKEND_URL = 'https://your-render-backend-url.com'; // ✅ Update with your actual Render URL
+const BACKEND_URL = 'https://letter-editor-buen.onrender.com'; // ✅ Updated with correct backend URL
 
 const LetterEditor = ({ onSave }) => {
   const [content, setContent] = useState('');
@@ -18,7 +18,7 @@ const LetterEditor = ({ onSave }) => {
 
     try {
       const response = await axios.post(
-        `${BACKEND_URL}/save-letter`,
+        `${BACKEND_URL}/save-letter`, // ✅ Updated Save Letter URL
         { content },
         { headers: { Authorization: `Bearer ${token}` } }
       );
