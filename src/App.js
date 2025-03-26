@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LetterEditor from './components/LetterEditor';
 
+const BACKEND_URL = 'https://your-render-backend-url.com'; // ✅ Update with your actual Render URL
+
 const App = () => {
   const [user, setUser] = useState(null);
   const [letters, setLetters] = useState([]);
@@ -24,7 +26,7 @@ const App = () => {
 
   const fetchUserProfile = async (token) => {
     try {
-      const response = await axios.get('http://localhost:5000/profile', {
+      const response = await axios.get(`${BACKEND_URL}/profile`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(response.data);
@@ -68,7 +70,7 @@ const App = () => {
           </div>
         </div>
       ) : (
-        <a href="http://localhost:5000/auth/google">
+        <a href={`${BACKEND_URL}/auth/google`}>
           <button>Login with Google</button>
         </a>
       )}

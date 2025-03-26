@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
-import axios from 'axios'; // ✅ Import axios
+import axios from 'axios';
 import 'react-quill/dist/quill.snow.css';
 
+const BACKEND_URL = 'https://your-render-backend-url.com'; // ✅ Update with your actual Render URL
+
 const LetterEditor = ({ onSave }) => {
-  const [content, setContent] = useState(''); // ✅ Define content
+  const [content, setContent] = useState('');
 
   const handleSave = async () => {
     const token = localStorage.getItem('token');
@@ -16,8 +18,8 @@ const LetterEditor = ({ onSave }) => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/save-letter',
-        { content }, // ✅ Use content from state
+        `${BACKEND_URL}/save-letter`,
+        { content },
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
